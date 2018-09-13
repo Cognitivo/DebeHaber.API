@@ -24,7 +24,10 @@ namespace DebeHaber.API.Models
         /// </summary>
         SalesReturn = 5 
     }
-    
+
+    /// <summary>
+    /// Businees center.
+    /// </summary>
     public enum BusineesCenter 
     { 
         /// <summary>
@@ -59,7 +62,7 @@ namespace DebeHaber.API.Models
         /// Gets or sets the cloud identifier.
         /// </summary>
         /// <value>The cloud identifier.</value>
-        public int Cloud_id { get; set; }
+        public int? Cloud_id { get; set; }
 
         /// <summary>
         /// Gets or sets the customer tax identifier.
@@ -107,12 +110,12 @@ namespace DebeHaber.API.Models
         /// Gets or sets the comment.
         /// </summary>
         /// <value>The comment.</value>
-        public string Comment { get; set; 
+        public string Comment { get; set; }
 
         /// <summary>
-        /// Gets or sets the code expiry.
+        /// Gets or sets the code expiry in "yyyy-MM-dd" format. This is country specific hence nullable if not required.
         /// </summary>
-        /// <value>The code expiry.</value>
+        /// <value>Date the Code should expire.</value>
         public string CodeExpiry { get; set; }
 
         /// <summary>
@@ -122,7 +125,7 @@ namespace DebeHaber.API.Models
         public int PaymentCondition { get; set; }
 
         /// <summary>
-        /// Gets or sets the currency code.
+        /// Gets or sets the currency code. All currency codes are set to <a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217 standard.</a>
         /// </summary>
         /// <value>The currency code.</value>
         public string CurrencyCode { get; set; }

@@ -29,12 +29,17 @@ namespace DebeHaber.API
         /// <summary>
         /// Initializes a new instance of the <see cref="T:DebeHaber.API.Send"/> class.
         /// </summary>
-        /// <param name="SendTo">URL.</param>
-        /// <param name="API_Key">API key.</param>
+        /// <param name="SendTo">Choose if you want to send your data to production, or playground.</param>
+        /// <param name="API_Key">Place your API Key generated from the site here. Remember that production and playground keys are different.</param>
         public Send(SendTo SendTo, string API_Key)
         {
             API = API_Key;
             Url = SendTo == SendTo.Production ? "https://www.debehaber.com" : "https://test.debehaber.com";
+        }
+
+        private object SendData(object Json)
+        {
+            return Json;
         }
 
         /// <summary>
@@ -44,7 +49,6 @@ namespace DebeHaber.API
         /// <param name="Invoices">List of Invoices which can include Sales, Purchases, Credit Notes, and Debit Notes.</param>
         public List<Models.Invoice> Invoices(List<Models.Invoice> Invoices)
         {
-
             return Invoices;
         }
 
@@ -53,10 +57,32 @@ namespace DebeHaber.API
         /// </summary>
         /// <returns>The movements.</returns>
         /// <param name="AccountMovements">Purchases.</param>
+        public List<Models.Invoice> AccountsPayable(List<Models.Invoice> AccountMovements)
+        {
+
+            return AccountMovements;
+        }
+
+        /// <summary>
+        /// Sends Account Movements.
+        /// </summary>
+        /// <returns>The movements.</returns>
+        /// <param name="AccountMovements">AccountMovements.</param>
         public List<Models.Invoice> AccountMovements(List<Models.Invoice> AccountMovements)
         {
 
             return AccountMovements;
+        }
+
+        /// <summary>
+        /// Sends Fixed Assets
+        /// </summary>
+        /// <returns>The assets.</returns>
+        /// <param name="FixedAssets">Fixed Assets.</param>
+        public List<Models.FixedAsset> FixedAssets(List<Models.FixedAsset> FixedAssets)
+        {
+
+            return FixedAssets;
         }
     }
 }
