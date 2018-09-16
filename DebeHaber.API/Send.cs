@@ -9,15 +9,15 @@ namespace DebeHaber.API
     public class Send
     {
         /// <summary>
-        /// Send to.
+        /// Select to which Server to send your data.
         /// </summary>
         public enum SendTo { 
             /// <summary>
-            /// The production.
+            /// Production is the live database. Any data sent here will go into your real-live accounting. Do this once you have tested your code properly.
             /// </summary>
             Production, 
             /// <summary>
-            /// The playground.
+            /// Playground is a place to test your code. You will be required to create a playground account (don't worry it's free).
             /// </summary>
             Playground 
         }
@@ -49,6 +49,7 @@ namespace DebeHaber.API
         /// <param name="Invoices">List of Invoices which can include Sales, Purchases, Credit Notes, and Debit Notes.</param>
         public List<Models.Invoice> Invoices(List<Models.Invoice> Invoices)
         {
+
             return Invoices;
         }
 
@@ -57,7 +58,7 @@ namespace DebeHaber.API
         /// </summary>
         /// <returns>The movements.</returns>
         /// <param name="AccountMovements">Purchases.</param>
-        public List<Models.Invoice> AccountsPayable(List<Models.Invoice> AccountMovements)
+        public List<Models.AccountMovement> Payments(List<Models.AccountMovement> AccountMovements)
         {
 
             return AccountMovements;
@@ -68,7 +69,7 @@ namespace DebeHaber.API
         /// </summary>
         /// <returns>The movements.</returns>
         /// <param name="AccountMovements">AccountMovements.</param>
-        public List<Models.Invoice> AccountMovements(List<Models.Invoice> AccountMovements)
+        public List<Models.AccountMovement> AccountMovements(List<Models.AccountMovement> AccountMovements)
         {
 
             return AccountMovements;

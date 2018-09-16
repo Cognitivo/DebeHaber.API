@@ -6,7 +6,8 @@ namespace DebeHaber.API.Models
     /// <summary>
     /// Invoice types.
     /// </summary>
-    public enum InvoiceTypes { 
+    public enum InvoiceTypes 
+    { 
         /// <summary>
         /// The purchase.
         /// </summary>
@@ -28,18 +29,18 @@ namespace DebeHaber.API.Models
     /// <summary>
     /// Businees center.
     /// </summary>
-    public enum BusineesCenter 
+    public enum BusinesCenter 
     { 
         /// <summary>
-        /// The revenue by service.
+        /// Options means that item sold is a service, and thus 100% of income is considered profit.
         /// </summary>
         RevenueByService = 1, 
         /// <summary>
-        /// The asset inventory.
+        /// Option means that item sold had an inventory value, and will discount the cost (Cost of Goods Sold) to calculate the profit.
         /// </summary>
-        Asset_Inventory = 2, 
+        RevenueByInventory = 2, 
         /// <summary>
-        /// The fixed asset.
+        /// Options means that item sold is a fixed asset (ex Property, Car, Furniture, etc). This will remove the fixed asset from your system.
         /// </summary>
         FixedAsset = 3 
     }
@@ -152,7 +153,7 @@ namespace DebeHaber.API.Models
             /// Gets or sets the type.
             /// </summary>
             /// <value>The type.</value>
-        public BusineesCenter Type { get; set; }
+        public BusinesCenter Type { get; set; }
 
             /// <summary>
             /// Gets or sets the VATP ercentage.

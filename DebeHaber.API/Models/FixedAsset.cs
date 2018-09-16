@@ -3,6 +3,7 @@ namespace DebeHaber.API.Models
 {
     public class FixedAsset
     {
+
         /// <summary>
         /// Gets or sets the local identifier.
         /// </summary>
@@ -52,7 +53,7 @@ namespace DebeHaber.API.Models
         public string PurchaseDate { get; set; }
 
         /// <summary>
-        /// Gets or sets the quantity.
+        /// Gets or sets the quantity, default will be one.
         /// </summary>
         /// <value>The quantity.</value>
         public int Quantity { get; set; }
@@ -82,7 +83,7 @@ namespace DebeHaber.API.Models
         public string AssetGroup { get; set; }
 
         /// <summary>
-        /// Gets or sets the life span.
+        /// Gets or sets the life span before depreciating to zero value.
         /// </summary>
         /// <value>The life span.</value>
         public decimal? LifeSpan { get; set; }
